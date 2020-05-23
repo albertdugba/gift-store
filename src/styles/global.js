@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     html,
@@ -11,4 +12,15 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing:border-box;
         font-family:'Sen', sans-serif;
     }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  margin: auto;
+`;
+
+export const FixedContainer = styled.div`
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
 `;

@@ -1,12 +1,13 @@
 import React from "react";
 
 import "./App.css";
+import Layout from "./components/hoc/Layout";
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to the gift shop</h1>
-    </div>
+    <Layout>
+      <h1>Welcome</h1>
+    </Layout>
   );
 }
 

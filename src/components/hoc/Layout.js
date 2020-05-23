@@ -1,10 +1,13 @@
 import React from "react";
+import ToolBar from "../Navigation/ToolBar";
+import SideDrawer from "../Navigation/SideDrawer";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <div>
-      <h1>ToolBar</h1>
-      <h1>SideDrawer</h1>
+      <ToolBar />
+      <SideDrawer />
+      <main>{children}</main>
     </div>
   );
 };
