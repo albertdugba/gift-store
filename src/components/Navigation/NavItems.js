@@ -9,8 +9,8 @@ const NavItems = () => {
         Home
       </NavItem>
       <NavItem link="/store">Store</NavItem>
-      <NavItem link="contact">Contact</NavItem>
-      <NavItem link="faq">FAQ</NavItem>
+      <NavItem link="/contact">Contact</NavItem>
+      <NavItem link="/faq">FAQ</NavItem>
     </NavItemsStyles>
   );
 };

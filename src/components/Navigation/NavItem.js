@@ -5,16 +5,11 @@ import { NavItemStyles } from "../../styles/NavigationStyles";
 const NavItem = ({ children, link, exact }) => {
   return (
     <NavItemStyles>
-      <NavLink to={link} exact={exact} activeClassName={active}>
+      <NavLink to={link} exact={exact}>
         {children}
       </NavLink>
     </NavItemStyles>
   );
-};
-
-const active = {
-  background: "purple",
-  color: "white",
 };
 
 export default NavItem;

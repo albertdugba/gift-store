@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediaQueries } from "./theme";
+import { mediaQueries } from "./global/theme";
 
 export const HeaderStyles = styled.header`
   position: fixed;

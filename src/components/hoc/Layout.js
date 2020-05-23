@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import ToolBar from "../Navigation/ToolBar";
 import SideDrawer from "../Navigation/SideDrawer";
 
 const Layout = ({ children }) => {
+  const [showSideDrawer, setShowSideDrawer] = useState(false);
+
+  const closeSideDrawerHandler = () => {
+    setShowSideDrawer(false);
+  };
+  const toggleSideDrawer = () => {
+    setShowSideDrawer(!showSideDrawer);
+  };
+
   return (
     <div>
-      <ToolBar />
-      <SideDrawer />
-      <main>{children}</main>
+      <ToolBar drawerToggle={toggleSideDrawer} />
+      <SideDrawer open={showSideDrawer} closed={closeSideDrawerHandler} />
+      <main style={{ marginTop: "55px" }}>{children}</main>
     </div>
   );
 };

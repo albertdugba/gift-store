@@ -6,16 +6,16 @@ import {
   NavContainer,
   DesktopOnly,
 } from "../../styles/NavigationStyles";
-import { FixedContainer } from "../../styles/global";
+import { FixedContainer } from "../../styles/global/global";
 import NavItems from "./NavItems";
 import Hamburger from "./Hamburger";
 
-const ToolBar = () => {
+const ToolBar = ({ drawerToggle }) => {
   return (
     <HeaderStyles>
       <FixedContainer>
         <NavContainer>
-          <Hamburger />
+          <Hamburger clicked={drawerToggle} />
           <Logo>
             {" "}
             <img src={logo} alt="" />
