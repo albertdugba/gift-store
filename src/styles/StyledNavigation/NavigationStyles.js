@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediaQueries } from "./global/theme";
+import { mediaQueries } from "../global/theme";
 
 export const HeaderStyles = styled.header`
   position: fixed;
@@ -70,7 +70,7 @@ export const NavItemStyles = styled.li`
     display: block;
     width: auto;
     height: 100%;
-    margin: 0 10px;
+    margin: 15px;
 
     & a {
       text-decoration: none;

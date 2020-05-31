@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediaQueries } from "./global/theme";
+import { mediaQueries } from "../global/theme";
 
 export const HamburgerStyle = styled.div`
   width: 40px;

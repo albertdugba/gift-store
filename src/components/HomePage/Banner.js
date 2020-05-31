@@ -1,6 +1,10 @@
 import React from "react";
+
 import banner from "../../images/banner.jpg";
-import { BannerStyles, BannerContent } from "../../styles/BannerStyles";
+import {
+  BannerStyles,
+  BannerContent,
+} from "../../styles/StyledUIElements/BannerStyles";
 
 const Banner = () => {
   return (

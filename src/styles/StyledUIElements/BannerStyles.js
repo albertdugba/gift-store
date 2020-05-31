@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { mediaQueries } from "./global/theme";
+import { mediaQueries } from "../global/theme";
 
 export const BannerStyles = styled.div`
   width: 100%;
   & img {
     width: 100%;
     max-width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     height: 100%;
   }
   z-index: -1;
@@ -20,9 +20,15 @@ export const BannerContent = styled.section`
   display: flex;
   text-align: center;
   justify-content: center;
+  flex-flow: column;
   align-items: center;
   width: 100%;
   height: 100%;
+
+  p {
+    font-size: 2.3rem;
+    color: pink;
+  }
 
   h1 {
     @media ${mediaQueries.mobileLarge} {

@@ -1,5 +1,5 @@
 import React from "react";
-import { HamburgerStyle } from "../../styles/HamburgerStyles";
+import { HamburgerStyle } from "../../styles/StyledNavigation/HamburgerStyles";
 
 const Hamburger = ({ clicked }) => {
   return (

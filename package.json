@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:5000",
   "name": "gift-store",
   "version": "0.1.0",
   "private": true,
@@ -7,6 +8,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
+    "gsap": "^3.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -14,7 +17,8 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

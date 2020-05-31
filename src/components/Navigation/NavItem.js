@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { NavItemStyles } from "../../styles/NavigationStyles";
+import { NavItemStyles } from "../../styles/StyledNavigation/NavigationStyles";
 
 const NavItem = ({ children, link, exact }) => {
   return (

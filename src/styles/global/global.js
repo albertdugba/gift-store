@@ -21,6 +21,10 @@ export const Container = styled.div`
 
 export const FixedContainer = styled.div`
   width: 100%;
-  max-width: 1140px;
+  max-width: 1100px;
   margin: auto;
+`;
+
+export const Centered = styled.div`
+  text-align: center;
 `;

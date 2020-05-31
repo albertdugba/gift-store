@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
+import { Logo } from "../../styles/StyledNavigation/NavigationStyles";
 import logo from "../../images/logo.jpg";
-import { Logo } from "../../styles/NavigationStyles";
+import classes from "../../styles/StyledNavigation/SideDrawer.module.css";
 import NavItems from "./NavItems";
-import classes from "../../styles/SideDrawer.module.css";
 import BackDrop from "./BackDrop";
 
 const SideDrawer = ({ open, closed }) => {

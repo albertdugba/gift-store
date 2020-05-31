@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "image": "./images/birthday1.jpg",
+    "price": 120,
+    "stockCount": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam libero omnis veritatis nihil sapiente id dolor accusamus esse quibusdam temporibus, voluptas aliquid, perferendis culpa eveniet repudiandae explicabo totam quod animi.",
+    "tags": ["birthday", "flower"]
+  },
+
+  {
+    "id": "2",
+    "image": "./images/birthday1.jpg",
+    "price": 140,
+    "stockCount": 5,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam libero omnis veritatis nihil sapiente id dolor accusamus esse quibusdam temporibus, voluptas aliquid, perferendis culpa eveniet repudiandae explicabo totam quod animi.",
+    "tags": ["birthday", "flower"]
+  }
+]
