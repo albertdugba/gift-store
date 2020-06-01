@@ -1,11 +1,20 @@
 import React from "react";
-import { ProductCardStyle } from "../../styles/StyledProducts/ProductCardStyles";
-import { Button } from "../../styles/StyledUIElements/Button";
+import {
+  ProductCardStyle,
+  CardInner,
+  ProductImage,
+} from "../../styles/StyledProducts/ProductCardStyles";
+import { SecondaryBtn } from "../../styles/StyledUIElements/Button";
 
-const ProductCard = () => {
+const ProductCard = ({ imageUrl, name, price }) => {
   return (
     <ProductCardStyle>
-      <Button>Buy</Button>
+      <ProductImage src={imageUrl} alt={name} />
+      <CardInner>
+        <p>{name}</p>
+        <p>${price.toFixed(2)}</p>
+      </CardInner>
+      <SecondaryBtn>Buy</SecondaryBtn>
     </ProductCardStyle>
   );
 };
