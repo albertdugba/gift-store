@@ -1,8 +1,10 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { producerReducer } from "../store/reducer/productReducer";
+import { getAllProductsReducer } from "./reducer/ProductReducer";
+import { getProductDetails } from "../store/reducer/ProductDetail";
 const rootReducer = combineReducers({
-  allProducts: producerReducer,
+  allProducts: getAllProductsReducer,
+  productDetails: getProductDetails,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

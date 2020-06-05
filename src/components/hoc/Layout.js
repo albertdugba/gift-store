@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     <div>
       <ToolBar drawerToggle={toggleSideDrawer} />
       <SideDrawer open={showSideDrawer} closed={closeSideDrawerHandler} />
-      <main style={{ marginTop: "55px" }}>{children}</main>
+      <main style={{ marginTop: "85px" }}>{children}</main>
     </div>
   );
 };

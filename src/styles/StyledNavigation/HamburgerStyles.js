@@ -19,7 +19,7 @@ export const HamburgerStyle = styled.div`
   & span {
     width: 45px;
     height: 3px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.primaryColorPink};
   }
 
   @media ${mediaQueries.mobileLarge} {

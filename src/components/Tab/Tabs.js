@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Centered } from "../../styles/global/global";
+import { Centered, Container } from "../../styles/global/global";
+import { Button } from "../../styles/StyledUIElements/Button";
 
 const Tabs = () => {
   return (

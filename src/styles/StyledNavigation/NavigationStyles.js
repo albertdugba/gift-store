@@ -7,8 +7,7 @@ export const HeaderStyles = styled.header`
   left: 0;
   height: 56px;
   width: 100%;
-  background: ${({ theme }) => theme.secondaryColor};
-  color: ${({ theme }) => theme.primaryColor};
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export const Logo = styled.div``;
@@ -18,6 +17,8 @@ export const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
+  align-items: center;
 `;
 
 export const NavItemsStyles = styled.ul`

@@ -16,13 +16,8 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.div`
   width: 100%;
-  margin: auto;
-`;
-
-export const FixedContainer = styled.div`
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1110px;
+  margin: 5px auto;
 `;
 
 export const Centered = styled.div`

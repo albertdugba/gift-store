@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../images/logo.jpg";
-import { FixedContainer } from "../../styles/global/global";
+import { Container } from "../../styles/global/global";
 import NavItems from "./NavItems";
 import Hamburger from "./Hamburger";
 import {
@@ -13,18 +13,16 @@ import {
 const ToolBar = ({ drawerToggle }) => {
   return (
     <HeaderStyles>
-      <FixedContainer>
+      <Container>
         <NavContainer>
           <Hamburger clicked={drawerToggle} />
-          <Logo>
-            {" "}
-            <img src={logo} alt="" />
-          </Logo>
+
+          <h3 style={{ color: "pink" }}>GiftStore</h3>
           <DesktopOnly>
             <NavItems />
           </DesktopOnly>
         </NavContainer>
-      </FixedContainer>
+      </Container>
     </HeaderStyles>
   );
 };

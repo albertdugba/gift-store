@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProducts } from "../../store/action/productActions";
-import ProductCard from "./ProductCard";
-import { ProductItemStyle } from "../../styles/StyledProducts/ProductCardStyles";
-import { FixedContainer } from "../../styles/global/global";
+import { fetchAllProducts } from "../../store/action/ProductActions";
+import { ProductItemStyle } from "../../styles/StyledProducts/Product";
+import { Container } from "../../styles/global/global";
+import Spinner from "../UI/Spinner/Spinner";
+import ProductContainer from "./ProductContainer";
 
 const ProductList = () => {
   const loadProducts = useSelector(state => state.allProducts);
@@ -17,18 +18,18 @@ const ProductList = () => {
   }, []);
 
   const loadedData = loading ? (
-    <h1>loading....</h1>
+    <Spinner />
   ) : error ? (
     <h1>{error.message}</h1>
   ) : products.data === undefined ? (
-    <h1>loading</h1>
+    <Spinner />
   ) : (
-    products.data.map((p, idx) => <ProductCard {...p} key={idx} />)
+    products.data.map((p, idx) => <ProductContainer {...p} key={idx} />)
   );
   return (
-    <FixedContainer>
+    <Container>
       <ProductItemStyle>{loadedData}</ProductItemStyle>
-    </FixedContainer>
+    </Container>
   );
 };
 

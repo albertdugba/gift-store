@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-export const producerReducer = (state = initialState, action) => {
+export const getAllProductsReducer = (state = initialState, action) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
       return {
