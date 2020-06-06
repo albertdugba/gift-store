@@ -2,9 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getProductDetails } from "../../store/action/ProductActions";
-import { Details } from "../../styles/StyledProducts/ProductDetailsStyle";
-import { Container } from "../../styles/global/global";
+import {
+  Details,
+  LeftColumn,
+  RightColumn,
+  ProductPrice,
+  ProductDesc,
+} from "../../styles/StyledProducts/ProductDetailsStyle";
+
 import Spinner from "../UI/Spinner/Spinner";
+import { SecondaryBtn } from "../../styles/StyledUIElements/Button";
 
 const ProductDetails = props => {
   const dispatch = useDispatch();
@@ -24,17 +31,22 @@ const ProductDetails = props => {
   ) : (
     <div>
       <Details>
-        <Container>
-          <section>
-            <h1 style={{ fontSize: "3rem" }}>{product.data.name}</h1>
-            <div>{product.data.description}</div>
-            <div>{product.data.numberInStock}</div>
-            <div>{product.data.price}</div>
-            <div>{product.data.slug}</div>
-          </section>
+        <LeftColumn>
+          <img src={product.data.imageUrl} alt={product.data.name} />
+        </LeftColumn>
 
-          {/* <img src={product.data.imageUrl} alt={product.data.name} /> */}
-        </Container>
+        <RightColumn>
+          <ProductDesc>
+            <span>{product.data.slug}</span>
+            <h1>{product.data.name}</h1>
+            <div>{product.data.description}</div>
+            <div>Number in stock: {product.data.numberInStock}</div>
+          </ProductDesc>
+          <ProductPrice>
+            <span>${product.data.price.toFixed(2)}</span>
+            <SecondaryBtn>Add to cart</SecondaryBtn>
+          </ProductPrice>
+        </RightColumn>
       </Details>
     </div>
   );

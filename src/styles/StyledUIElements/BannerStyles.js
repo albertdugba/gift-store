@@ -13,7 +13,7 @@ export const BannerStyles = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 7px;
   }
 
   @media ${mediaQueries.mobileSmall} {

@@ -21,6 +21,7 @@ export const ProductContainerStyle = styled.div`
   & img {
     max-height: auto;
     width: 100%;
+    border-radius: 5px;
   }
 
   @media ${mediaQueries.smartSize} {

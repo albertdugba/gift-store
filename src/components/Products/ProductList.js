@@ -18,11 +18,15 @@ const ProductList = () => {
   }, []);
 
   const loadedData = loading ? (
-    <Spinner />
+    <div style={{ textAlign: "center" }}>
+      <Spinner />
+    </div>
   ) : error ? (
     <h1>{error.message}</h1>
   ) : products.data === undefined ? (
-    <Spinner />
+    <div style={{ textAlign: "center" }}>
+      <Spinner />
+    </div>
   ) : (
     products.data.map((p, idx) => <ProductContainer {...p} key={idx} />)
   );

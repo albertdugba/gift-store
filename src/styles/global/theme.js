@@ -9,6 +9,7 @@ export const theme = {
 const device = {
   mobilelarge: "500px",
   mediumSize: "920px",
+  mediumSize1: "940px",
   smartSize: "600px",
   mobileSmall: "499px",
   mobileXtraSmall: "453px",
@@ -17,6 +18,7 @@ const device = {
 export const mediaQueries = {
   mobileLarge: `(min-width:${device.mobilelarge})`,
   mediumSize: `(max-width:${device.mediumSize})`,
+  mediumSize1: `(max-width:${device.mediumSize1})`,
   smartSize: `(max-width:${device.smartSize})`,
   mobileSmall: `(max-width:${device.mobilelarge})`,
   mobileXtraSmall: `(max-width:${device.mobileXtraSmall})`,
