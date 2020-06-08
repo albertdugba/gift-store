@@ -6,7 +6,7 @@ export const Details = styled.div`
   background: #f9f8fa;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1110px;
+  max-width: 1000px;
   margin-left: 20px;
   margin-right: -20px;
   padding-left: 1rem;

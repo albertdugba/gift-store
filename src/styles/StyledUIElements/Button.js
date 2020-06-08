@@ -32,3 +32,8 @@ export const SecondaryBtn = styled(Button)`
     #f7d9e4 100%
   );
 `;
+
+export const PrimaryBtn = styled(Button)`
+  background: hsla(244, 282, 182, 0.8);
+  color: black;
+`;

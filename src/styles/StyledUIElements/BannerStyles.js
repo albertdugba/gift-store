@@ -3,7 +3,7 @@ import { mediaQueries } from "../global/theme";
 
 export const BannerStyles = styled.div`
   @media ${mediaQueries.mobileLarge} {
-    background: ${({ theme }) => theme.backgroundColorPink};
+    background: ${({ theme }) => theme.bannerBackground};
     min-height: 75vh;
     width: 100vw;
     margin: 0 30px;

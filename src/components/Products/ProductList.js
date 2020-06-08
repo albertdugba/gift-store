@@ -15,7 +15,7 @@ const ProductList = () => {
 
   useEffect(() => {
     dispatch(fetchAllProducts());
-  }, []);
+  }, [dispatch]);
 
   const loadedData = loading ? (
     <div style={{ textAlign: "center" }}>
@@ -24,7 +24,9 @@ const ProductList = () => {
   ) : error ? (
     <h1>{error.message}</h1>
   ) : products.data === undefined ? (
-    <div style={{ textAlign: "center" }}>
+    <div
+      style={{ display: "flex", justifyContent: "center", textAlign: "center" }}
+    >
       <Spinner />
     </div>
   ) : (

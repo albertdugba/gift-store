@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "../../images/logo.jpg";
+
 import { Container } from "../../styles/global/global";
 import NavItems from "./NavItems";
 import Hamburger from "./Hamburger";
 import {
   DesktopOnly,
   HeaderStyles,
-  Logo,
   NavContainer,
 } from "../../styles/StyledNavigation/NavigationStyles";
 

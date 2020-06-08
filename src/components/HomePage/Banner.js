@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowDown } from "react-icons/fa";
 
-import banner from "../../images/cover.jpg";
+import banner from "../../images/ban.jpg";
 import {
   BannerStyles,
   BannerContent,

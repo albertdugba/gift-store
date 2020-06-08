@@ -1,0 +1,28 @@
+.shopping-cart__container {
+  border-bottom: 1px solid #f5eded;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4.5px;
+  text-align: left;
+}
+
+.shopping-cart__image img {
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  border-radius: 6px;
+}
+
+.shopping-cart__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart__description :last-child {
+  color: #8f8b8b;
+}

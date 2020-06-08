@@ -8,10 +8,10 @@ export const ProductContainerStyle = styled.div`
   padding-left: 4.5%;
   padding-right: 4.5%;
   padding-top: 4.5%;
-  border: 1px solid #eeed;
+  border: 1px solid #e8e8e8;
   border-radius: 4px;
   flex: 1 18%;
-  background: #f9f8fa;
+  background: #f6efef;
   margin-top: 20px 20px auto;
 
   & a {
