@@ -12,6 +12,7 @@ import {
 
 import Spinner from "../UI/Spinner/Spinner";
 import { SecondaryBtn } from "../../styles/StyledUIElements/Button";
+import { Container } from "../../styles/global/global";
 
 const ProductDetails = props => {
   const [qty, setQty] = useState(1);
@@ -30,9 +31,13 @@ const ProductDetails = props => {
   }, [props.match.params.id, dispatch]);
 
   const loadedDetails = loading ? (
-    <Spinner />
+    <Details>
+      <Spinner />
+    </Details>
   ) : product.data === undefined ? (
-    <h1>{error}</h1>
+    <Details>
+      <h1>{error}</h1>
+    </Details>
   ) : (
     <>
       <Details>

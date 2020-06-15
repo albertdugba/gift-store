@@ -8,6 +8,7 @@ export const HeaderStyles = styled.header`
   height: 56px;
   width: 100%;
   color: ${({ theme }) => theme.textColor};
+  background: ${({ theme }) => theme.bannerBackground};
 `;
 
 export const Logo = styled.div``;

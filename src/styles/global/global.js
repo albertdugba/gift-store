@@ -17,9 +17,14 @@ export const GlobalStyles = createGlobalStyle`
 export const Container = styled.div`
   width: 100%;
   max-width: 1110px;
-  margin: 5px auto;
+  margin: auto;
 `;
 
 export const Centered = styled.div`
   text-align: center;
+`;
+
+export const CustomContainer = styled.div`
+  max-width: 1000px;
+  margin: auto;
 `;

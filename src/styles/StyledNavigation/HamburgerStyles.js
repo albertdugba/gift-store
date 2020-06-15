@@ -6,7 +6,7 @@ export const HamburgerStyle = styled.div`
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 10px 0;
   box-sizing: border-box;
@@ -17,7 +17,7 @@ export const HamburgerStyle = styled.div`
   margin-right: 10px;
 
   & span {
-    width: 45px;
+    width: 30px;
     height: 3px;
     background-color: ${({ theme }) => theme.primaryColorPink};
   }

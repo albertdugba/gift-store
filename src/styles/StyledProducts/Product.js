@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mediaQueries } from "../global/theme";
 
 export const ProductContainerStyle = styled.div`
-  width: 600vw;
+  width: 100vw;
   height: auto;
   display: flex;
   padding-left: 4.5%;

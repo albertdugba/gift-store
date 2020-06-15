@@ -14,7 +14,7 @@
 .shopping-cart__image img {
   width: 100%;
   height: auto;
-  max-width: 120px;
+  max-width: 80px;
   border-radius: 6px;
 }
 
@@ -25,4 +25,20 @@
 
 .shopping-cart__description :last-child {
   color: #8f8b8b;
+}
+
+@media (min-width: 500px) {
+  .shopping--cart__not-found {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
+
+@media (max-width: 499px) {
+  .shopping--cart__not-found {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
 }

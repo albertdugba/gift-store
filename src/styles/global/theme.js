@@ -4,7 +4,7 @@ export const theme = {
   textColor: "#fff",
   buttonColor: "#f7d9e4",
   backgroundColorPink: "#f4ebf4",
-  bannerBackground: "#fffafc",
+  bannerBackground: "#ffffff",
 };
 
 const device = {

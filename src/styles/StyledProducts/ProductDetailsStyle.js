@@ -3,56 +3,31 @@ import { mediaQueries } from "../global/theme";
 
 export const Details = styled.div`
   width: 100%;
-  background: #f9f8fa;
-  display: flex;
-  flex-wrap: wrap;
   max-width: 1000px;
-  margin-left: 20px;
-  margin-right: -20px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  overflow-x: hidden;
-
-  @media ${mediaQueries.mediumSize1} {
-    flex-direction: column;
-    margin-top: 60px;
-  }
+  margin: auto;
+  padding: 0.8rem;
+  display: flex;
+  border-radius: 7px;
+  overflow: hidden;
+  vertical-align: top;
 
   & img {
     width: 100%;
     height: auto;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 7px;
   }
 `;
 
-export const LeftColumn = styled.aside`
-  @media ${mediaQueries.mediumSize1} {
-    width: 100%;
-  }
+export const LeftColumn = styled.div`
   width: 65%;
-  position: relative;
-
-  & img {
-    @media ${mediaQueries.mediumSize1} {
-      width: 100%;
-      max-width: 550px;
-      right: 0;
-      top: -65px;
-      left: initial;
-    }
-    width: 100%;
-    /* position: absolute; */
-    left: 0;
-    top: 0;
-  }
+  border: 2px solid red;
 `;
 export const RightColumn = styled.div`
-  @media ${mediaQueries.mediumSize1} {
-    width: 100%;
-  }
   width: 35%;
   margin-top: 60px;
+  border: 2px solid red;
+  height: auto;
 `;
 
 export const ProductDesc = styled.div`
@@ -60,7 +35,7 @@ export const ProductDesc = styled.div`
   margin-bottom: 20px;
 
   & div {
-    border-bottom: 3px solid #e1e8ee;
+    border-bottom: 1px solid #e1e8ee;
   }
 
   & span {
@@ -88,7 +63,7 @@ export const ProductDesc = styled.div`
     font-weight: 300;
     color: #86939e;
     line-height: 24px;
-    border-bottom: 3px solid #e1e8ee;
+    border-bottom: 1px solid #e1e8ee;
   }
 `;
 export const ProductPrice = styled.div`
