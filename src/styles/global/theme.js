@@ -9,7 +9,7 @@ export const theme = {
 
 const device = {
   mobilelarge: "500px",
-  mediumSize: "920px",
+  mediumSize: "690px",
   mediumSize1: "940px",
   smartSize: "600px",
   mobileSmall: "499px",

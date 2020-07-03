@@ -34,7 +34,7 @@ const Cart = props => {
   };
 
   const onCheckOut = () => {
-    props.history.push("/signin?redirect=shipping");
+    props.history.push("/login?redirect=shipping");
   };
 
   return (
@@ -53,39 +53,41 @@ const Cart = props => {
           <>
             <div key={item.product}>
               <div className="shopping-cart__container">
-                <div className="shopping-cart__buttons">
-                  <PrimaryBtn onClick={() => onRemove(item.product)}>
-                    Remove
-                  </PrimaryBtn>
-                </div>
-                <div className="shopping-cart__image">
-                  <img src={item.imageUrl} alt={item.name} />
-                </div>
-
-                <Link to={`/product/${item.product}`}>
-                  <div className="shopping-cart__description">
-                    <span>{item.name}</span>
-                    <span>{item.slug}</span>
+                <div className="shopping-cart__inner">
+                  <div className="shopping-cart__buttons">
+                    <PrimaryBtn onClick={() => onRemove(item.product)}>
+                      Remove
+                    </PrimaryBtn>
                   </div>
-                </Link>
+                  <div className="shopping-cart__image">
+                    <img src={item.imageUrl} alt={item.name} />
+                  </div>
 
-                <div className="shopping-cart__quantity">
-                  <select
-                    value={qty}
-                    onChange={e =>
-                      dispatch(addToCart(item.product, e.target.value))
-                    }
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  {"  "} x ${item.price}
-                </div>
+                  <Link to={`/product/${item.product}`}>
+                    <div className="shopping-cart__description">
+                      <span>{item.name}</span>
+                      <span>{item.slug}</span>
+                    </div>
+                  </Link>
 
-                <div className="shopping-cart__total-price">
-                  Subtotal({cartItems.reduce((a, c) => a + c.qty, 0)} items): ${" "}
-                  {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                  <div className="shopping-cart__quantity">
+                    <select
+                      value={qty}
+                      onChange={e =>
+                        dispatch(addToCart(item.product, e.target.value))
+                      }
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                    {"  "} x ${item.price}
+                  </div>
+
+                  <div className="shopping-cart__total-price">
+                    Subtotal({cartItems.reduce((a, c) => a + c.qty, 0)} items):
+                    $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                  </div>
                 </div>
               </div>
             </div>

@@ -12,7 +12,6 @@ import {
 
 import Spinner from "../UI/Spinner/Spinner";
 import { SecondaryBtn } from "../../styles/StyledUIElements/Button";
-import { Container } from "../../styles/global/global";
 
 const ProductDetails = props => {
   const [qty, setQty] = useState(1);

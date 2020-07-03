@@ -10,9 +10,8 @@ const NavItems = () => {
         <NavItem exact link="/">
           Home
         </NavItem>
-        <NavItem link="/cart/">Cart (2 items)</NavItem>
-        <NavItem link="/contact">Contact</NavItem>
-        <NavItem link="/faq">FAQ</NavItem>
+        <NavItem link="/cart/">Cart</NavItem>
+        <NavItem link="/login">Login</NavItem>
       </NavItemsStyles>
     </Container>
   );

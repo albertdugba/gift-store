@@ -4,15 +4,15 @@ export const Button = styled.button`
   outline: none;
   border: none;
   display: block;
-  padding: 0.7rem;
+  padding: 0.59rem;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
-  max-width: 200px;
+  max-width: 175px;
   border-radius: 5px;
   background-size: 300% 300%;
-  margin: auto;
+  margin: 15px auto;
 
   transition: 0.5s;
   color: white;
@@ -36,4 +36,9 @@ export const SecondaryBtn = styled(Button)`
 export const PrimaryBtn = styled(Button)`
   background: hsla(244, 282, 182, 0.8);
   color: black;
+`;
+
+export const AuthButton = styled(Button)`
+  background: ${({ theme }) => theme.secondaryColor};
+  color: white;
 `;

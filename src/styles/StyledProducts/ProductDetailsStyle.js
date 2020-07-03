@@ -3,39 +3,38 @@ import { mediaQueries } from "../global/theme";
 
 export const Details = styled.div`
   width: 100%;
-  max-width: 1000px;
+  max-width: 940px;
   margin: auto;
-  padding: 0.8rem;
   display: flex;
   border-radius: 7px;
   overflow: hidden;
-  vertical-align: top;
 
   & img {
     width: 100%;
     height: auto;
-    max-width: 500px;
     border-radius: 7px;
+  }
+
+  @media ${mediaQueries.mediumSize} {
+    flex-flow: column;
   }
 `;
 
 export const LeftColumn = styled.div`
-  width: 65%;
-  border: 2px solid red;
+  flex: 1.5;
+  margin: 20px;
 `;
 export const RightColumn = styled.div`
-  width: 35%;
-  margin-top: 60px;
-  border: 2px solid red;
-  height: auto;
+  flex: 1.5;
+  margin: 20px;
 `;
 
 export const ProductDesc = styled.div`
-  border-bottom: 3px solid #e1e8ee;
-  margin-bottom: 20px;
-
-  & div {
+  & div,
+  h1,
+  span {
     border-bottom: 1px solid #e1e8ee;
+    line-height: 1.5;
   }
 
   & span {
@@ -52,10 +51,13 @@ export const ProductDesc = styled.div`
   }
 
   & h1 {
-    font-weight: 300;
-    font-size: 52px;
-    color: #43484d;
-    letter-spacing: -2px;
+    font-size: 40px;
+    @media ${mediaQueries.mediumSize} {
+      font-weight: 300;
+      font-size: 27px;
+      color: #43484d;
+      letter-spacing: -2px;
+    }
   }
 
   & p {
