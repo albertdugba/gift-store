@@ -43,11 +43,12 @@ export const ProductDesc = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    background: ${({ theme }) => theme.buttonColor};
+    background: #c4a7cc;
+    color: #fff;
     padding: 0.5rem;
     height: 30px;
     border-radius: 50px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
   }
 
   & h1 {

@@ -3,12 +3,10 @@ import styled from "styled-components";
 export const CartContainer = styled.section`
   width: 750px;
   height: 425px;
-  /* background: #ece4e4; */
   margin: 80px auto;
   box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   display: flex;
-  flex-direction: column;
   padding: 1rem;
 
   & img {

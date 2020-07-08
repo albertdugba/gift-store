@@ -1,33 +1,35 @@
-.shopping-cart__container {
-  border-bottom: 1px solid #f5eded;
-  display: flex;
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 10px;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 4.5px;
-  text-align: left;
-}
-
-.shopping-cart__image img {
-  width: 100%;
-  height: auto;
-  max-width: 80px;
-  border-radius: 6px;
-}
-
-.shopping-cart__description {
-  display: flex;
-  flex-direction: column;
-}
-
-.shopping-cart__description :last-child {
-  color: #8f8b8b;
-}
-
 @media (min-width: 500px) {
+  .shopping-cart__container {
+    border-bottom: 1px solid #f5eded;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 4.5px;
+    text-align: left;
+  }
+
+  .shopping-cart__image img {
+    width: 100%;
+    height: auto;
+    max-width: 80px;
+    border-radius: 6px;
+  }
+
+  .shopping-cart__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shopping-cart__description :last-child {
+    color: #8f8b8b;
+  }
+
+  .shopping-cart__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
   .shopping--cart__not-found {
     width: 100%;
     max-width: 400px;
@@ -36,6 +38,20 @@
 }
 
 @media (max-width: 499px) {
+  .shopping-cart__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .shopping-cart__inner img {
+    width: 100%;
+  }
+
   .shopping--cart__not-found {
     width: 100%;
     max-width: 250px;
@@ -45,18 +61,24 @@
 
 @media (max-width: 800px) {
   .shopping-cart__container {
+    border-bottom: 1px solid #f5eded;
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 4.5px;
+    text-align: left;
   }
 
   .shopping-cart__inner {
+    margin: auto;
     height: auto;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .shopping-cart__inner img {
-    width: 50%;
+    width: 100%;
+    max-width: 120px;
+    border-radius: 6px;
   }
 }

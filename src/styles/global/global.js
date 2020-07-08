@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     body{
         box-sizing:border-box;
         font-family:'Sen', sans-serif;
+        background-color: #f7e4f7;
     }
 `;
 

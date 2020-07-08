@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { AuthButton } from "../../../styles/StyledUIElements/Button";
-import { login, register } from "../../../store/action/UserActions";
-import {
-  FormContainer,
-  Form,
-  FormInput,
-} from "../../../styles/StyledUIElements/Form";
+import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
+import { register } from "../../../store/action/UserActions";
+
+import { Link } from "react-router-dom";
 
 const Register = props => {
   const [name, setName] = useState("");
@@ -16,7 +13,7 @@ const Register = props => {
 
   const registeration = useSelector(state => state.register);
 
-  const { userInfo } = registeration;
+  const { userInfo, loading, error } = registeration;
 
   const dispatch = useDispatch();
 
@@ -26,40 +23,67 @@ const Register = props => {
     }
   }, [userInfo]);
 
-  const onSubmit = event => {
+  const onSubmitHandler = event => {
     event.preventDefault();
     dispatch(register(name, email, password));
   };
 
   return (
     <>
-      <FormContainer>
-        <Form onSubmit={onSubmit}>
-          <h2>Your Account</h2>
-          <label htmlFor="name">Name</label>
-          <FormInput
-            type="name"
-            placeholder="Name..."
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-          <label htmlFor="email">Email</label>
-          <FormInput
-            type="email"
-            placeholder="Email..."
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-          <label htmlFor="password">Password</label>
-          <FormInput
-            value={password}
-            type="password"
-            placeholder="Password..."
-            onChange={e => setPassword(e.target.value)}
-          />
-          <AuthButton>Register</AuthButton>
-        </Form>
-      </FormContainer>
+      <div id="container">
+        {loading && <div>{loading}</div>}
+        {error && <div>{error}</div>}
+        <div id="wrapper">
+          <div className="form-container">
+            <span className="form-heading">Your Account</span>
+            <form onSubmit={onSubmitHandler}>
+              <div className="input-group">
+                <i className="fas fa-envelope"></i>
+                <input
+                  type="name"
+                  placeholder="Username"
+                  required
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
+                <span className="bar"></span>
+              </div>
+              <div className="input-group">
+                <i className="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
+                <span className="bar"></span>
+              </div>
+              <div className="input-group">
+                <i className="fas fa-lock"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
+                <span className="bar"></span>
+              </div>
+
+              <div className="input-group">
+                <SecondaryBtn>Register</SecondaryBtn>
+              </div>
+
+              <div className="switch-login">
+                <span>
+                  Already have an account? <Link to="/login">Login</Link>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

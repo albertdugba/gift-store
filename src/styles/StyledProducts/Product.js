@@ -2,17 +2,16 @@ import styled from "styled-components";
 import { mediaQueries } from "../global/theme";
 
 export const ProductContainerStyle = styled.div`
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
-  padding-left: 4.5%;
-  padding-right: 4.5%;
-  padding-top: 4.5%;
+  padding: 1rem;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
-  flex: 1 18%;
   background: #f6efef;
-  margin-top: 20px 20px auto;
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
 
   & a {
     text-decoration: none;
@@ -20,7 +19,7 @@ export const ProductContainerStyle = styled.div`
 
   & img {
     height: auto;
-    width: 100%;
+    max-width: 290px;
     border-radius: 5px;
   }
 
@@ -46,14 +45,9 @@ export const ProductContainerStyle = styled.div`
 `;
 
 export const ProductItemStyle = styled.div`
-  /* display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-  row-gap: 1.3rem;
-  column-gap: 2.5rem;
-  padding: 0.5rem;
-  justify-items: center; */
-  display: flex;
-  flex-wrap: wrap;
+  justify-items: center;
 `;
 
 export const CardInner = styled.div`
@@ -62,4 +56,13 @@ export const CardInner = styled.div`
   align-items: center;
   padding: 1rem;
   margin-top: -10px;
+  justify-items: center;
+`;
+
+export const ProductImage = styled.div`
+  img {
+    width: 100%;
+    width: 240px;
+    height: 170px;
+  }
 `;

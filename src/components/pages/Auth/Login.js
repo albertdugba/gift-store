@@ -1,42 +1,80 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./Shared.css";
+import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
+import { Link } from "react-router-dom";
+import { login } from "../../../store/action/UserActions";
 
 const Login = props => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginInfo = useSelector(state => state.login);
+  const { userInfo, loading, error } = loginInfo;
+
+  const dispatch = useDispatch();
+
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push(redirect);
+    }
+  }, [userInfo]);
+
+  const onSubmitHandler = event => {
+    event.preventDefault();
+    dispatch(login(email, password));
+  };
   return (
     <>
       <div id="container">
         <div id="wrapper">
+          {loading && <div>{loading}</div>}
+          {error && <div>{error}</div>}
           <div className="form-container">
             <span className="form-heading">Your Account</span>
-            <form>
-              <div className="input-group">
-                <i className="fas fa-user"></i>
-                <input type="text" placeholder="Username" required />
-                <span className="bar"></span>
-              </div>
+            <form onSubmit={onSubmitHandler}>
               <div className="input-group">
                 <i className="fas fa-envelope"></i>
-                <input type="email" placeholder="Email" required />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
                 <span className="bar"></span>
               </div>
               <div className="input-group">
                 <i className="fas fa-lock"></i>
-                <input type="password" placeholder="Password" required />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
                 <span className="bar"></span>
               </div>
 
               <div className="input-group">
-                <button>
-                  <i className="fab fa-telegram-plane"></i>
-                </button>
+                <SecondaryBtn>Login</SecondaryBtn>
               </div>
 
               <div className="switch-login">
-                <a href="!#">
-                  Already have an account? <span>Login</span>
-                </a>
+                <span>
+                  Haven't created an account yet?{" "}
+                  <Link to="/register">Sign up now!</Link>
+                </span>
+              </div>
+              <div className="forgot-password">
+                {/* <span>
+                  <span>Forgot Password</span>
+                </span> */}
               </div>
             </form>
           </div>

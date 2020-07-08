@@ -21,7 +21,7 @@ const Cart = props => {
 
   const dispatch = useDispatch();
 
-  console.log(cartItems);
+  console.log(cartItems.length === 0);
 
   useEffect(() => {
     if (productId) {
@@ -39,6 +39,12 @@ const Cart = props => {
 
   return (
     <>
+      <div
+        className="shopping-cart__total-price"
+        style={{ textAlign: "right", padding: "1rem" }}
+      >
+        Total {cartItems.reduce((a, c) => a + c.price * c.qty, 0).toFixed(2)}
+      </div>
       {cartItems.length === 0 ? (
         <CustomContainer style={{ textAlign: "center" }}>
           <img
@@ -50,56 +56,49 @@ const Cart = props => {
         </CustomContainer>
       ) : (
         cartItems.map(item => (
-          <>
-            <div key={item.product}>
-              <div className="shopping-cart__container">
-                <div className="shopping-cart__inner">
-                  <div className="shopping-cart__buttons">
-                    <PrimaryBtn onClick={() => onRemove(item.product)}>
-                      Remove
-                    </PrimaryBtn>
-                  </div>
-                  <div className="shopping-cart__image">
-                    <img src={item.imageUrl} alt={item.name} />
-                  </div>
+          <div key={item.product}>
+            <div className="shopping-cart__container">
+              <div className="shopping-cart__inner">
+                <div className="shopping-cart__buttons">
+                  <PrimaryBtn onClick={() => onRemove(item.product)}>
+                    Remove
+                  </PrimaryBtn>
+                </div>
+                <div className="shopping-cart__image">
+                  <img src={item.imageUrl} alt={item.name} />
+                </div>
 
+                <span className="shopping-cart__description">
                   <Link to={`/product/${item.product}`}>
                     <div className="shopping-cart__description">
-                      <span>{item.name}</span>
                       <span>{item.slug}</span>
+                      <span>{item.name}</span>
                     </div>
                   </Link>
+                </span>
 
-                  <div className="shopping-cart__quantity">
-                    <select
-                      value={qty}
-                      onChange={e =>
-                        dispatch(addToCart(item.product, e.target.value))
-                      }
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
-                    {"  "} x ${item.price}
-                  </div>
-
-                  <div className="shopping-cart__total-price">
-                    Subtotal({cartItems.reduce((a, c) => a + c.qty, 0)} items):
-                    $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                  </div>
+                <div className="shopping-cart__quantity">
+                  <select
+                    value={qty}
+                    onChange={e =>
+                      dispatch(addToCart(item.product, e.target.value))
+                    }
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                  </select>
+                  {"  "} x ${item.price}
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ))
       )}
 
-      <SecondaryBtn
-        disabled={cartItems.length === 0}
-        style={{ textAlign: "center" }}
-        onClick={onCheckOut}
-      >
+      <SecondaryBtn disabled={cartItems.length === 0} onClick={onCheckOut}>
         {cartItems.length === 0
           ? "No items in the cart"
           : "Proceed to checkout"}
