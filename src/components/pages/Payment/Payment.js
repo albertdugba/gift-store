@@ -41,12 +41,13 @@ const Payment = props => {
                 <i className="fas fa-envelope"></i>
                 <input
                   type="radio"
-                  placeholder="Address"
+                  placeholder="Payment"
                   required
                   value={paymentMethod}
                   onChange={e => setPaymentMethod(e.target.value)}
                 />
                 <span className="bar"></span>
+                <label htmlFor="paypal">PayPal</label>
               </div>
 
               <div className="input-group">

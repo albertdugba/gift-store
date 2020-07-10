@@ -2,6 +2,7 @@ import {
   ADD_ITEM_TO_CART,
   REMOVE_ITEM_FROM_CART,
   CART_SAVE_SHIPPING,
+  CART_PAYMENT,
 } from "../../constants/cart";
 
 const initialState = {
@@ -25,6 +26,9 @@ export const cartReducer = (state = initialState, action) => {
 
     case CART_SAVE_SHIPPING:
       return { ...state, shipping: action.payload };
+
+    case CART_PAYMENT:
+      return { ...state, payment: action.payload };
 
     case REMOVE_ITEM_FROM_CART:
       return {
