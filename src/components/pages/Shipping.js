@@ -7,6 +7,8 @@ import "./Auth/Shared.css";
 import { Link } from "react-router-dom";
 import { saveShipping } from "../../store/action/CartActions";
 import { SecondaryBtn } from "../../styles/StyledUIElements/Button";
+import CheckOutSteps from "./CheckOutSteps";
+import { Container } from "../../styles/global/global";
 
 const Shipping = props => {
   const [email, setEmail] = useState("");
@@ -18,22 +20,20 @@ const Shipping = props => {
 
   const dispatch = useDispatch();
 
-  const redirect = props.location.search
-    ? props.location.search.split("=")[1]
-    : "/";
-
   const onSubmitHandler = event => {
     event.preventDefault();
     dispatch(saveShipping(address, city, postalCode, country));
+    props.history.push("payment");
   };
 
   return (
     <>
       <div id="container">
-        <h2 style={{ textAlign: "center" }}>Lorem ipsum dolor sit amet.</h2>
+        <Container>
+          {" "}
+          <CheckOutSteps step1 step2 />
+        </Container>
         <div id="wrapper">
-          {/* {loading && <div>{loading}</div>}
-          {error && <div>{error}</div>} */}
           <div className="form-container">
             <motion.span
               initial={{ y: -250 }}
@@ -47,10 +47,10 @@ const Shipping = props => {
               <div className="input-group">
                 <i className="fas fa-envelope"></i>
                 <input
-                  type="email"
+                  type="text"
                   placeholder="Address"
                   required
-                  value={email}
+                  value={address}
                   onChange={e => setAddress(e.target.value)}
                 />
                 <span className="bar"></span>
@@ -62,7 +62,7 @@ const Shipping = props => {
                   type="text"
                   placeholder="City"
                   required
-                  value={email}
+                  value={city}
                   onChange={e => setCity(e.target.value)}
                 />
                 <span className="bar"></span>
@@ -73,7 +73,7 @@ const Shipping = props => {
                   type="number"
                   placeholder="Postal Code"
                   required
-                  value={email}
+                  value={postalCode}
                   onChange={e => setPostalCode(e.target.value)}
                 />
                 <span className="bar"></span>
@@ -85,10 +85,13 @@ const Shipping = props => {
                   type="text"
                   placeholder="Country"
                   required
-                  value={email}
+                  value={country}
                   onChange={e => setCountry(e.target.value)}
                 />
                 <span className="bar"></span>
+              </div>
+              <div className="input-group">
+                <SecondaryBtn>Payment</SecondaryBtn>
               </div>
             </form>
           </div>

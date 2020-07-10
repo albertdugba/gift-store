@@ -27,7 +27,7 @@ const Cart = props => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
-  }, []);
+  }, [productId, qty]);
 
   const onRemove = productId => {
     dispatch(removeCart(productId));

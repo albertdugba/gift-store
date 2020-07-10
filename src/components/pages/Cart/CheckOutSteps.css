@@ -1,0 +1,19 @@
+.Checkout__steps {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  margin: 10px auto;
+}
+
+.Checkout__steps > div {
+  border-radius: 4px;
+  border-top: 0.3rem solid #ccc;
+  padding-top: 0.4rem;
+  color: #c0c0c0;
+  flex: 1 1;
+}
+
+.Checkout__steps > div.active {
+  border-top: 0.3rem solid #7c267c;
+  color: #7c267c;
+}

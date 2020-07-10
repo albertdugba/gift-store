@@ -9,6 +9,7 @@ import Cart from "./components/pages/Cart/Cart";
 import Login from "./components/pages/Auth/Login";
 import Register from "./components/pages/Auth/Register";
 import Shipping from "./components/pages/Shipping";
+import Payment from "./components/pages/Payment/Payment";
 
 function App() {
   const authLogin = useSelector(state => state.login);
@@ -20,6 +21,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/shipping" component={Shipping} />
+      <Route path="/payment" component={Payment} />
       <Route path="/product/:id" component={ProductDetails} />
       <Route path="/cart/:id?" component={Cart} />
       <Route path="/" exact component={Home} />
