@@ -13,7 +13,7 @@ const Banner = () => {
   return (
     <BannerStyles>
       <BannerContent>
-        <h1>Welcome to the GiftShop</h1>
+        <h1>One Stop GiftShop</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A, minima
           iusto magnam saepe cupiditate labore placeat incidunt! Quae vel

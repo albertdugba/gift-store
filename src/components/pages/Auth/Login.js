@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./Shared.css";
 import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
 import { Link } from "react-router-dom";
 import { login } from "../../../store/action/UserActions";
+import { formVariant } from "../../animations/variants";
 
 const Login = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
 
   const loginInfo = useSelector(state => state.login);
   const { userInfo, loading, error } = loginInfo;
@@ -29,6 +35,7 @@ const Login = props => {
     event.preventDefault();
     dispatch(login(email, password));
   };
+
   return (
     <>
       <div id="container">
@@ -36,45 +43,60 @@ const Login = props => {
           {loading && <div>{loading}</div>}
           {error && <div>{error}</div>}
           <div className="form-container">
-            <span className="form-heading">Your Account</span>
+            <motion.span
+              initial={{ y: -250 }}
+              animate={{ y: -10 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+              className="form-heading"
+            >
+              Login Your Account
+            </motion.span>
             <form onSubmit={onSubmitHandler}>
               <div className="input-group">
                 <i className="fas fa-envelope"></i>
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="Address"
                   required
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={e => setAddress(e.target.value)}
                 />
                 <span className="bar"></span>
               </div>
+
               <div className="input-group">
-                <i className="fas fa-lock"></i>
+                <i className="fas fa-envelope"></i>
                 <input
-                  type="password"
-                  placeholder="Password"
+                  type="text"
+                  placeholder="City"
                   required
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
+                  value={email}
+                  onChange={e => setCity(e.target.value)}
+                />
+                <span className="bar"></span>
+              </div>
+              <div className="input-group">
+                <i className="fas fa-envelope"></i>
+                <input
+                  type="number"
+                  placeholder="Postal Code"
+                  required
+                  value={email}
+                  onChange={e => setPostalCode(e.target.value)}
                 />
                 <span className="bar"></span>
               </div>
 
               <div className="input-group">
-                <SecondaryBtn>Login</SecondaryBtn>
-              </div>
-
-              <div className="switch-login">
-                <span>
-                  Haven't created an account yet?{" "}
-                  <Link to="/register">Sign up now!</Link>
-                </span>
-              </div>
-              <div className="forgot-password">
-                {/* <span>
-                  <span>Forgot Password</span>
-                </span> */}
+                <i className="fas fa-envelope"></i>
+                <input
+                  type="text"
+                  placeholder="Country"
+                  required
+                  value={email}
+                  onChange={e => setCountry(e.target.value)}
+                />
+                <span className="bar"></span>
               </div>
             </form>
           </div>

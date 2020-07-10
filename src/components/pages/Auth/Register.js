@@ -17,9 +17,13 @@ const Register = props => {
 
   const dispatch = useDispatch();
 
+  const redirect = props.location.search
+    ? props.location.search.split("=")[1]
+    : "/";
+
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
   }, [userInfo]);
 
@@ -35,7 +39,7 @@ const Register = props => {
         {error && <div>{error}</div>}
         <div id="wrapper">
           <div className="form-container">
-            <span className="form-heading">Your Account</span>
+            <span className="form-heading">Create A New Account</span>
             <form onSubmit={onSubmitHandler}>
               <div className="input-group">
                 <i className="fas fa-envelope"></i>
@@ -77,7 +81,14 @@ const Register = props => {
 
               <div className="switch-login">
                 <span>
-                  Already have an account? <Link to="/login">Login</Link>
+                  Already have an account?{" "}
+                  <Link
+                    to={
+                      redirect === "/" ? "/login" : "login?redirect=" + redirect
+                    }
+                  >
+                    Sign up now!
+                  </Link>
                 </span>
               </div>
             </form>

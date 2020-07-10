@@ -141,7 +141,6 @@ form {
     width: 100%;
     max-width: 600px;
     margin: auto;
-    box-shadow: 0 2px 1.4rem rgba(0, 0, 0, 0.9);
   }
 
   .form-container::before {
@@ -150,7 +149,7 @@ form {
 
   .form-heading {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-90%);
   }
 
   form {
