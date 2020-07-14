@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ProductContainerStyle,
   CardInner,
   ProductImage,
 } from "../../styles/StyledProducts/Product";
-import { Link } from "react-router-dom";
 import { Container } from "../../styles/global/global";
 
 const ProductContainer = ({ imageUrl, name, price, _id }) => {

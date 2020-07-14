@@ -143,6 +143,12 @@ form {
     margin: auto;
   }
 
+  .form-container {
+    max-width: 33rem;
+    margin-bottom: -30px;
+    overflow: visible;
+  }
+
   .form-container::before {
     height: 10rem;
   }

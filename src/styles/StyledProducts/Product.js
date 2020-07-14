@@ -15,6 +15,7 @@ export const ProductContainerStyle = styled.div`
 
   & a {
     text-decoration: none;
+    color: ${({ theme }) => theme.secondaryColor};
   }
 
   & img {

@@ -47,7 +47,7 @@ const ProductDetails = props => {
         <RightColumn>
           <ProductDesc>
             <span>{product.data.slug}</span>
-            <h1>{product.data.name}</h1>
+            <h1 style={{ marginTop: "15px" }}>{product.data.name}</h1>
             <div>{product.data.description}</div>
             <div>Number in stock: {product.data.numberInStock}</div>
             <div>

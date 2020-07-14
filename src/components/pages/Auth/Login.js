@@ -6,7 +6,6 @@ import "./Shared.css";
 import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
 import { Link } from "react-router-dom";
 import { login } from "../../../store/action/UserActions";
-import { formVariant } from "../../animations/variants";
 
 const Login = props => {
   const [email, setEmail] = useState("");
@@ -25,7 +24,7 @@ const Login = props => {
     if (userInfo) {
       props.history.push(redirect);
     }
-  }, [userInfo]);
+  }, [userInfo, redirect, props.history]);
 
   const onSubmitHandler = event => {
     event.preventDefault();
@@ -88,11 +87,6 @@ const Login = props => {
                     Sign up now!
                   </Link>
                 </span>
-              </div>
-              <div className="forgot-password">
-                {/* <span>
-                  <span>Forgot Password</span>
-                </span> */}
               </div>
             </form>
           </div>

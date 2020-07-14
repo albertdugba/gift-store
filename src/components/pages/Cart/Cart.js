@@ -39,12 +39,18 @@ const Cart = props => {
 
   return (
     <>
-      <div
-        className="shopping-cart__total-price"
-        style={{ textAlign: "right", padding: "1rem" }}
-      >
-        Total {cartItems.reduce((a, c) => a + c.price * c.qty, 0).toFixed(2)}
-      </div>
+      <CustomContainer>
+        <div
+          className="shopping-cart__total-price "
+          style={{ textAlign: "right", padding: "1rem" }}
+        >
+          {" "}
+          <span className="total-price">
+            Total: $
+            {cartItems.reduce((a, c) => a + c.price * c.qty, 0).toFixed(2)}
+          </span>
+        </div>
+      </CustomContainer>
       {cartItems.length === 0 ? (
         <CustomContainer style={{ textAlign: "center" }}>
           <img

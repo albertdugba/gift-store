@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
 import { register } from "../../../store/action/UserActions";
-
-import { Link } from "react-router-dom";
 
 const Register = props => {
   const [name, setName] = useState("");

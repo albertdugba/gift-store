@@ -35,6 +35,14 @@
     max-width: 400px;
     height: auto;
   }
+
+  .total-price {
+    background: #c4a7cc;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (max-width: 499px) {
@@ -56,6 +64,13 @@
     width: 100%;
     max-width: 250px;
     height: auto;
+  }
+  .total-price {
+    background: #c4a7cc;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -80,5 +95,13 @@
     width: 100%;
     max-width: 120px;
     border-radius: 6px;
+  }
+
+  .total-price {
+    background: #e7b9e1;
+    color: rgb(15, 13, 13);
+    padding: 0.6rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 }

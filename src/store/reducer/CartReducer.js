@@ -7,6 +7,8 @@ import {
 
 const initialState = {
   cartItems: [],
+  shipping: {},
+  payment: {},
 };
 
 export const cartReducer = (state = initialState, action) => {

@@ -36,6 +36,6 @@ export const payment = data => dispatch => {
   dispatch({ type: CART_PAYMENT, payload: data });
 };
 
-export const removeCart = productId => async dispatch => {
+export const removeCart = productId => dispatch => {
   dispatch({ type: REMOVE_ITEM_FROM_CART, payload: productId });
 };
