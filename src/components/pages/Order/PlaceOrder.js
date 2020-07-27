@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import CheckOutSteps from "../CheckOutSteps";
-import { saveShipping } from "../../../store/action/CartActions";
 import { Container } from "../../../styles/global/global";
 import { SecondaryBtn } from "../../../styles/StyledUIElements/Button";
 
@@ -46,11 +45,13 @@ const PlaceOrder = props => {
           <div className="Place-order__info">
             <div>
               <h3>Shipping</h3>
+              <div>
+                {cart.shipping.address}{" "}
+                {cart.shipping.city ? "" : "No Shipping selected"}
+                {cart.shipping.postalCode} {cart.shipping.country}
+              </div>
             </div>
-            <div>
-              {cart.shipping.address}, {cart.shipping.city},
-              {cart.shipping.postalCode}, {cart.shipping.country}
-            </div>
+
             <div>
               <ul className="Place-order__card--list-wrapper">
                 <li></li>
@@ -58,22 +59,20 @@ const PlaceOrder = props => {
                   <div>Order is empty</div>
                 ) : (
                   cartItems.map(item => (
-                    <li>
-                      <div className="Place-order__card">
-                        <img src={item.imageUrl} alt="product" />
-                      </div>
-                      <div className="Place-order__card-name">
-                        <div>
-                          <Link to={"/product/" + item.product}>
-                            {item.name}
-                          </Link>
+                    <section>
+                      <div className="Place-order__inner">
+                        <div className="Place-order__card">
+                          <img src={item.imageUrl} alt="product" />
                         </div>
-                        <div>Qty: {item.qty}</div>
+                        <div className="Place-order__card-name">
+                          <div>{item.name}</div>
+                          <div>Qty: {item.qty}</div>
+                        </div>
+                        <div className="Place-order__card-cart--price">
+                          ${item.price}
+                        </div>
                       </div>
-                      <div className="Place-order__card-cart--price">
-                        ${item.price}
-                      </div>
-                    </li>
+                    </section>
                   ))
                 )}
               </ul>
@@ -114,7 +113,7 @@ const PlaceOrder = props => {
 
               <li style={{ color: "red" }}>
                 <div style={{ color: "red" }}>Order Total</div>
-                <div>
+                <div style={{ borderTop: "1.5px solid green", width: "20%" }}>
                   {cartItems.length === 0 ? "0.00" : totalPrice.toFixed(2)}
                 </div>
               </li>

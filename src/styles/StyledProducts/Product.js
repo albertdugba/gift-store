@@ -12,10 +12,16 @@ export const ProductContainerStyle = styled.div`
   /* margin: auto; */
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
   & a {
     text-decoration: none;
-    color: ${({ theme }) => theme.secondaryColor};
+    /* color: #e7b9e1; */
+    color: #000;
   }
 
   & img {

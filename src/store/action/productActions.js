@@ -31,3 +31,5 @@ export const getProductDetails = productId => async dispatch => {
     console.log(error);
   }
 };
+
+export const filterProducts = id => async dispatch => {};

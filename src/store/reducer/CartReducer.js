@@ -9,6 +9,7 @@ const initialState = {
   cartItems: [],
   shipping: {},
   payment: {},
+  count: 0,
 };
 
 export const cartReducer = (state = initialState, action) => {
@@ -24,7 +25,11 @@ export const cartReducer = (state = initialState, action) => {
           ),
         };
       }
-      return { ...state, cartItems: [...state.cartItems, item] };
+      return {
+        ...state,
+        cartItems: [...state.cartItems, item],
+        count: state.count + 1,
+      };
 
     case CART_SAVE_SHIPPING:
       return { ...state, shipping: action.payload };

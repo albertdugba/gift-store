@@ -19,9 +19,9 @@ const Cart = props => {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
 
-  const dispatch = useDispatch();
+  console.log(qty);
 
-  console.log(cartItems.length === 0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (productId) {
